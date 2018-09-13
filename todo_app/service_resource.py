@@ -16,6 +16,10 @@ async def render(tpl, **kwargs):
 
 
 async def home(request):
-    test = {'pip': 'pop', 'foo': 'bar'}
-    content = await render('home.html', title='Sanic', data='blob', test=test)
+    to_do_list = [
+        'Set up Docker',
+        'Create Sanic application',
+        'Add mongoDB'
+    ]
+    content = await render('home.html', title='Sanic', to_do_list=to_do_list)
     return content

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-      <h1>{{data}}</h1>
-      {% for key, value in test.items() %}
-	  {{key}} {{value}} <br>
-      {% endfor %}
+<h1>ToDoList</h1>
+<div class="list-group">
+    {% for value in to_do_list %}
+    <button type="button" class="list-group-item list-group-item-action">{{value}}</button>
+     {% endfor %}
+</div>
 {% endblock %}
