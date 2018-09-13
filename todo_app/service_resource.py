@@ -1,4 +1,4 @@
-from sanic.response import json, html, text
+from sanic.response import html
 
 from jinja2 import Environment, PackageLoader, select_autoescape
 
