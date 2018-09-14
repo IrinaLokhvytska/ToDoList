@@ -1,6 +1,7 @@
 from sanic import Sanic
 from todo_app.api import bp
 
+
 app = Sanic(__name__)
 
 app.static('/static', './static')
