@@ -20,21 +20,15 @@ async def render(tpl, **kwargs) -> object:
 
 async def home(request: object) -> object:
     """Asynchronous function for rendering page with current tasks"""
-    to_do_class = ToDoList(request.app.db)
-    to_do_list = await to_do_class.find_all_lists()
-    content = await render('home.html', title='Sanic', to_do_list=to_do_list)
+    content = await render('registration.html', title='Sanic')
     return content
 
 
 async def registration(request: object) -> object:
     """Asynchronous function for registration users"""
     user_class = User(request.app.db)
-    data = {
-        'login': 'ilokh',
-        'firstname': 'Iryna',
-        'lastname': 'Lokhvytska'
-    }
+    data = request
     await user_class.insert_user(data)
     users = await user_class.find_all_users()
-    content = await render('user.html', title='Sanic', users=users)
+    content = await render('home.html', title='Sanic', users=users)
     return content
