@@ -3,8 +3,8 @@ from sanic import app
 
 
 class MotorConnection(object):
-    """ Provides a MongoDB connection and sets the DB to be used.
-
+    """
+    Provides a MongoDB connection and sets the DB to be used.
     The class implements the Singleton pattern.
     """
     __instance = None
@@ -14,7 +14,7 @@ class MotorConnection(object):
             MotorConnection.__instance = object.__new__(cls)
 
             MotorConnection.__instance.client = AsyncIOMotorClient(
-                    'localhost',
+                    'db',
                     27017,
                     io_loop=app.get_event_loop()
                 )
