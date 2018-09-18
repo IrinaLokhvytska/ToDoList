@@ -8,14 +8,14 @@ motor = "*"
 marshmallow = "*"
 pandas = "*"
 selenium = "*"
-pytest = "*"
+pytest-sanic = "*"
 "flake8" = "*"
 sanic = "*"
 jinja2 = "*"
 
 [dev-packages]
 "flake8" = "*"
-"pytest" = "*"
+"pytest-sanic" = "*"
 
 [requires]
 python_version = "3.6"

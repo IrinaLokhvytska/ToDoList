@@ -2,8 +2,12 @@
 {% block content %}
 <h1>ToDoList</h1>
 <div class="list-group">
+    {% if to_do_list %}
     {% for value in to_do_list %}
     <button type="button" class="list-group-item list-group-item-action">{{value}}</button>
-     {% endfor %}
+    {% endfor %}
+    {% else %}
+    <button type="button" class="list-group-item list-group-item-action">No lists found</button>
+    {% endif %}
 </div>
 {% endblock %}

@@ -11,4 +11,7 @@ services:
       - db
   db:
     image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
     container_name: todo_db
