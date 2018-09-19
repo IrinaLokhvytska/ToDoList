@@ -1,5 +1,4 @@
 from sanic.response import html
-from db.todo_lists import ToDoList
 from db.user import User
 
 from jinja2 import Environment, PackageLoader, select_autoescape
