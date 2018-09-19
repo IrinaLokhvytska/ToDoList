@@ -27,7 +27,12 @@ async def home(request: object) -> object:
 async def registration(request: object) -> object:
     """Asynchronous function for registration users"""
     user_class = User(request.app.db)
-    data = request
+    form = request.form
+    data = {
+        'login': form['login'],
+        'firstname': form['firstname'],
+        'lastname': form['lastname']
+    }
     await user_class.insert_user(data)
     users = await user_class.find_all_users()
     content = await render('home.html', title='Sanic', users=users)
