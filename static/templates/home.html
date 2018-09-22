@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>ToDoList</h1>
+<h1>Users</h1>
 <div class="list-group">
-    {% if to_do_list %}
-    {% for value in to_do_list %}
+    {% if users %}
+    {% for value in users %}
     <button type="button" class="list-group-item list-group-item-action">{{value}}</button>
     {% endfor %}
     {% else %}
